@@ -10,6 +10,7 @@ public final class ForumUser {
     private final int age;
     private final int publicOfPosts;
 
+
     public ForumUser(final int userId, final String userName, final char sex, int yearOfBorn, final int monthOfBorn, final int dayOfBorn, final int age, final int publicOfPosts) {
         this.userId = userId;
         this.userName = userName;
@@ -18,6 +19,7 @@ public final class ForumUser {
         this.dateOfBirth = LocalDate.of(yearOfBorn, monthOfBorn, dayOfBorn);
         this.publicOfPosts = publicOfPosts;
     }
+
 
     public int getUserId() {
         return userId;

@@ -1,37 +1,35 @@
 package com.kodilla.stream.world;
 
-import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
-public final class World implements People {
+public final class World {
 
-    private String nameContinent;
-    private final Set<World> listContinents = new HashSet<>();
+    private String world;
+    private final Set<Continent> listContinents = new HashSet<>();
 
-    public World(String nameContinent) {
-        this.nameContinent = nameContinent;
+    public String getWorld() {
+        return world;
     }
 
-    public void addContinent(World continent) {
-listContinents.add(continent);
+    public void setWorld(String world) {
+        this.world = world;
     }
 
-    public String getNameContinent() {
-        return nameContinent;
+    public Set<Continent> getListContinents() {
+        return listContinents;
     }
 
-    @Override
-    public String toString() {
-        return "World{" +
-                "nameContinent='" + nameContinent + '\'' +
-                '}';
+    public World(String world) {
+
+        this.world = world;
     }
 
-    @Override
-    public BigDecimal getPeopleQuantity() {
-        return null;
+    public Set<Country> getPeopleQuanity() {
+        return listContinents.stream()
+                .flatMap(continent -> continent.getListCountry().stream())
+                .collect(Collectors.toSet());
     }
-
-    }
+}
 

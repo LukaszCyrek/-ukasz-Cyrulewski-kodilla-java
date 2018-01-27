@@ -1,2 +1,6 @@
 rootProject.name = 'testing'
+include 'kodilla-exception'
+include 'kodilla-exception'
+include ' kodilla-exception'
+include 'exception'
 
